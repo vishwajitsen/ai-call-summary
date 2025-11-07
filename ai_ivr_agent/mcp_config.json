@@ -1,0 +1,66 @@
+{
+  "version": "1.0",
+  "description": "MCP configuration for IVR Agent allowing multiple API integrations",
+  
+  "apis": [
+    {
+      "id": "epic_stu3_fhir",
+      "name": "Epic FHIR STU3",
+      "type": "fhir",
+      "base_url_env": "EPIC_FHIR_BASE",
+      "auth": {
+        "type": "oauth2",
+        "client_id_env": "EPIC_CLIENT_ID",
+        "client_secret_env": "EPIC_CLIENT_SECRET",
+        "authorization_url_env": "EPIC_AUTH_BASE",
+        "token_url_env": "EPIC_AUTH_BASE",
+        "redirect_uri_env": "EPIC_REDIRECT_URI",
+        "scopes_env": "EPIC_SCOPE"
+      },
+      "capabilities": [
+        "Appointment.read",
+        "Appointment.write",
+        "Slot.read",
+        "Patient.read"
+      ]
+    },
+
+    {
+      "id": "custom_internal_api",
+      "name": "Future Hospital Internal API",
+      "type": "rest",
+      "base_url_env": "INTERNAL_API_BASE",
+      "auth": {
+        "type": "none"
+      },
+      "capabilities": [
+        "claim-status",
+        "eligibility-check",
+        "member-profile"
+      ]
+    },
+
+    {
+      "id": "insurance_partner_api",
+      "name": "Insurance Partner API",
+      "type": "rest",
+      "base_url_env": "INSURANCE_API_BASE",
+      "auth": {
+        "type": "apikey",
+        "api_key_env": "INSURANCE_API_KEY",
+        "header_name": "x-api-key"
+      },
+      "capabilities": [
+        "policy-lookup",
+        "coverage-details",
+        "provider-search"
+      ]
+    }
+  ],
+
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-5",
+    "api_key_env": "OPENAI_API_KEY"
+  }
+}

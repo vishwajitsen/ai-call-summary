@@ -1,0 +1,101 @@
+fastapi
+uvicorn
+python-dotenv
+requests
+pandas
+aiohttp
+websockets
+python-multipart
+#azure-ai-openai
+azure-cognitiveservices-speech
+azure-identity
+openai
+jiwer
+dotenv
+azure-cognitiveservices-speech
+openpyxl
+
+sounddevice 
+numpy 
+scipy 
+openai 
+azure-cognitiveservices-speech 
+python-dotenv
+ringcentral
+
+# ---- Core environment ----
+python-dotenv
+ringcentral
+websockets
+requests
+azure-cognitiveservices-speech
+openai
+pandas
+textblob
+numpy
+scipy
+faker
+openpyxl
+rich
+colorama
+sounddevice
+asyncio
+pyngrok
+Flask
+pyngrok
+python-dotenv
+azure-cognitiveservices-speech
+pandas
+faker
+openpyxl
+python-dateutil
+cryptography
+
+# Core Web Framework
+Flask==3.0.2
+Werkzeug==3.0.1
+
+# Async
+aiofiles==24.1.0
+aiohttp==3.9.3
+
+# Azure Speech SDK (ASR + TTS)
+azure-cognitiveservices-speech==1.36.0
+
+# OpenAI GPT-5 (new SDK)
+openai==1.55.0
+
+# Excel handling for customer dataset
+pandas==2.2.1
+openpyxl==3.1.2
+
+# Email support
+pydantic==2.6.1
+python-dotenv==1.0.1
+
+# HTTP / API communication
+requests==2.31.0
+urllib3==2.2.1
+
+# JSON schema, validation
+jsonschema==4.21.1
+
+# MCP (Model Context Protocol) — Core Packages
+mcp==0.3.0
+mcp-server==0.3.0
+mcp-client==0.3.0
+
+# MCP Plugin Helper Utilities
+anyio==4.3.0
+starlette==0.36.2
+
+# Logging
+python-dateutil==2.9.0
+colorlog==6.8.2
+
+# Security
+cryptography==42.0.1
+
+# Optional RingCentral (future)
+# ringcentral==1.0.0  # enable later
+

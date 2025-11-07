@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "name": "aiivr_mcp_utils",
+  "version": "0.1.0",
+  "description": "MCP manifest for AI IVR Epic/STU3 integration utilities (flat util modules). Add additional modules to the tools array to expand functionality.",
+  "author": "you@example.com",
+  "entrypoint": "mcp_tools/utils/helpers.py",
+  "tools": [
+    {
+      "id": "epic_server",
+      "name": "Epic OAuth & helpers",
+      "module": "mcp_tools.utils.epic_server",
+      "description": "Handles Epic OAuth (PKCE), session store and small helpers to build authorize URL and exchange tokens.",
+      "functions": [
+        "create_session(session_id)",
+        "build_authorize_url(session_id)",
+        "redeem_code_for_token(code, session_id)",
+        "has_valid_token(session_id)",
+        "get_valid_access_token(session_id)",
+        "get_fhir_patient_id(session_id)"
+      ],
+      "modes": ["interactive", "http-callback"]
+    },
+    {
+      "id": "fhir_server",
+      "name": "FHIR (STU3) Appointment client",
+      "module": "mcp_tools.utils.fhir_server",
+      "description": "Search Slot / Appointment.$find and book with Appointment.$book against Epic STU3 endpoints.",
+      "functions": [
+        "search_available_slots(specialty, access_token, days_ahead=14)",
+        "book_appointment(patient_id, slot, access_token)",
+        "get_appointment(appointment_id, access_token)"
+      ]
+    },
+    {
+      "id": "azure_server",
+      "name": "Azure Speech helper (local wrapper)",
+      "module": "mcp_tools.utils.azure_server",
+      "description": "Simple wrapper to initialize or test Azure Speech config (used by azure_asr_tts.py).",
+      "functions": [
+        "validate_credentials()",
+        "tts_test(text)",
+        "stt_test()"
+      ]
+    },
+    {
+      "id": "email_server",
+      "name": "Email / SMTP helper",
+      "module": "mcp_tools.utils.email_server",
+      "description": "Send appointment confirmation emails via configured SMTP settings.",
+      "functions": [
+        "send_email(to, subject, body, attachments=None)",
+        "send_appointment_confirmation(to, patient_name, appointment, summary)"
+      ]
+    },
+    {
+      "id": "customer_server",
+      "name": "Customer datastore helper",
+      "module": "mcp_tools.utils.customer_server",
+      "description": "Utilities for local customer generation and lookup (wraps customer_data.py).",
+      "functions": [
+        "generate_customers_if_missing(n=1000)",
+        "find_customer_by_phone(phone)",
+        "validate_customer(phone_spoken, last4_spoken, dob_spoken)"
+      ]
+    },
+    {
+      "id": "helpers",
+      "name": "General helpers",
+      "module": "mcp_tools.utils.helpers",
+      "description": "Small helpers (time formatting, safe env reads, logging helpers).",
+      "functions": [
+        "safe_env(key, default=None)",
+        "format_slot_readable(slot_obj)",
+        "iso_to_human(iso_dt)"
+      ]
+    }
+  ],
+  "mcp": {
+    "extensible": true,
+    "how_to_add": "Add a new entry in the `tools` array with fields id, name, module, description and functions. Implement the module file at mcp_tools/utils/<module_name>.py and export the functions listed."
+  }
+}

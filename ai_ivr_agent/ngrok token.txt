@@ -1,0 +1,72 @@
+CustomerID	Name	Phone	Last4SSN	DOB	ZIP	Plan
+CUST0001	User_1	2103939022	5933	02/06/1975	14222	Basic
+CUST0002	User_2	2103557183	5458	09/11/2000	75986	Basic
+CUST0003	User_3	2105692861	6505	06/08/1980	83991	Gold
+CUST0004	User_4	2109109215	2491	04/24/1983	51862	Basic
+3899978041	3747	01/09/2007
+8785558651	2661	07/19/1962
+	AIIVRAGENT
+Client ID
+
+e4574de8-a8c6-44c6-812e-482eef289abe
+Non-Production Client ID
+
+336782fd-32f4-4ccc-8f0a-2b20bb39c5b8
+Non-Production JWK Set URL 
+
+
+http://
+fhir.epic.com
+ 
+
+Production JWK Set URL 
+
+https://
+fhir.epic.com
+ 
+EPIC_FHIR_BASE	https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/
+EPIC_AUTH_URL	https://fhir.epic.com/interconnect-fhir-oauth/oauth2/authorize
+EPIC_TOKEN_URL	https://fhir.epic.com/interconnect-fhir-oauth/oauth2/token
+EPIC_SCOPES	openid profile fhirUser patient/*.read (or others you requested)
+
+
+
+
+
+explain about this Appointment search related APIs from EPIC FHIR IN DETAIL IN A WELL DRAFTED WORD DOCUMENT AND GIVE THAT DOCUMENT,,,,,,,EACH AND EVERYTHING IN DETAIL AND HOW ITS APIs CAN BE INTEGRATED WITH MY  PYTHON AI IVR VOICE AGENT FOR BOOKING THE DOCTOR'S APPOINTMENT FOR ANY PATIENT ,,,,GIVE IN A WORD DOCUMENT ATTRACTIVELY ,,,,,IT SHOULD BE LIKE A HEALTH CARE EXPERT
+
+
+
+
+ngrok
+
+30xauC1DH5H14ufBC59qNGf6iJk_eQV3wdyknxGXsLDMs6cD
+
+
+
+
+C:\ngrok\ngrok.exe config add-authtoken 30xauC1DH5H14ufBC59qNGf6iJk_eQV3wdyknxGXsLDMs6cD
+
+
+{
+  "id": "ringcentral_api",
+  "name": "RingCentral Messaging",
+  "type": "rest",
+  "base_url_env": "RINGCENTRAL_BASE_URL",
+  "auth": {
+    "type": "oauth2",
+    "client_id_env": "RINGCENTRAL_CLIENT_ID",
+    "client_secret_env": "RINGCENTRAL_CLIENT_SECRET",
+    "token_url_env": "RINGCENTRAL_TOKEN_URL"
+  },
+  "capabilities": [
+    "send-sms",
+    "receive-sms",
+    "list-messages"
+  ]
+}
+RINGCENTRAL_BASE_URL=...
+RINGCENTRAL_CLIENT_ID=...
+RINGCENTRAL_CLIENT_SECRET=...
+RINGCENTRAL_TOKEN_URL=...
+
